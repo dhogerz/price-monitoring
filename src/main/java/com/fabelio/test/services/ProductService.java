@@ -15,7 +15,9 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class ProductService {
@@ -66,6 +68,17 @@ public class ProductService {
         }
 
         return result;
+    }
+
+    public List<Product> getAllProducts() {
+        List<Product> products = new ArrayList<>();
+        productRepository.findAll().forEach(product -> products.add(product));
+        return products;
+    }
+    
+    public Product getProductById(String id) {
+        logger.info("product id   : {}", id);
+        return productRepository.findOne(Long.valueOf(id));
     }
 
     private boolean isFabelioHost(String uri) {
