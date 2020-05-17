@@ -44,18 +44,18 @@ public class SearchController {
     }
 
     @GetMapping("/api/search/products")
-    public List<Product> searchAllProducts() {
-        return productService.getAllProducts();
+    public ResponseEntity<List<Product>> searchAllProducts() {
+        return ResponseEntity.ok(productService.getAllProducts());
     }
 
     @GetMapping("/api/search/products/{id}")
-    public Product searchProductById(@PathVariable String id) {
-        return productService.getProductById(id);
+    public ResponseEntity<Product> searchProductById(@PathVariable String id) {
+        return ResponseEntity.ok(productService.getProductById(id));
     }
 
     @GetMapping("/api/search/links")
-    public List<SearchLink> searchAllLinks() {
-        return linkService.getAllLink();
+    public ResponseEntity<List<SearchLink>> searchAllLinks() {
+        return ResponseEntity.ok(linkService.getAllLink());
     }
 
 }

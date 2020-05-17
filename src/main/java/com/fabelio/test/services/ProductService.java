@@ -75,7 +75,7 @@ public class ProductService {
         productRepository.findAll().forEach(product -> products.add(product));
         return products;
     }
-    
+
     public Product getProductById(String id) {
         logger.info("product id   : {}", id);
         return productRepository.findOne(Long.valueOf(id));
