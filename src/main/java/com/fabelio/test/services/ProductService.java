@@ -32,8 +32,6 @@ public class ProductService {
             result = "Failed";
         }
 
-        System.out.println("test");
-
         try {
             Document document = Jsoup.connect(uri).get();
             if (document.body() != null) {
