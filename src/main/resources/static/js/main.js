@@ -29,6 +29,9 @@ function fire_ajax_submit() {
         success: function (data) {
 
             console.log("SUCCESS : ", data);
+            var json = "<h1>SUCCESS</h1><pre>" + JSON.stringify(data, null, 4) + "</pre>";
+
+            $('#feedback').html(json);
             $("#btn-search").prop("disabled", false);
 
             // window.location="second-page";

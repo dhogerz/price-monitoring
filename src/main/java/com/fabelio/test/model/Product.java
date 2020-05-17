@@ -1,9 +1,7 @@
 package com.fabelio.test.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Product {
@@ -17,11 +15,15 @@ public class Product {
     private String image;
     private String price;
 
-    public Product(String name, String description, String image, String price) {
+    @Column(name = "created_date")
+    private Date createdDate;
+
+    public Product(String name, String description, String image, String price, Date createdDate) {
         this.name = name;
         this.description = description;
         this.image = image;
         this.price = price;
+        this.createdDate = createdDate;
     }
 
     public long getId() {
@@ -62,5 +64,13 @@ public class Product {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 }
