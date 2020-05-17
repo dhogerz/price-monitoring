@@ -17,7 +17,7 @@ Price Monitoring
 $ mvn clean install
 $ mvn spring-boot:run
 ```
-Run on http://localhost:8000<br>
+Run on http://localhost:8080<br>
 
 ### Environment
 
